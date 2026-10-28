@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon">🔐</span><span>Secure<span class="brand-accent">Check</span></span></div>
+      <span class="top-note"><span class="dot"></span> Password security tool</span>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">YOUR FIRST LINE OF DEFENCE</div>
+      <h1>Build a stronger<br><span>digital lock.</span></h1>
+      <p>Check your password strength, understand its weaknesses, and create a safer alternative.</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><div class="eyebrow">PASSWORD ANALYZER</div><h2>Test your password</h2></div>
+        <span class="privacy"><span>●</span> Runs in your browser</span>
+      </div>
+
+      <label for="password">Enter a password</label>
+      <div class="password-wrap">
+        <input id="password" type="password" placeholder="Type a password to analyze" autocomplete="new-password">
+        <button id="togglePassword" class="icon-btn" type="button" aria-label="Show password">Show</button>
+      </div>
+
+      <div class="strength-row">
+        <span id="strengthLabel">No password entered</span>
+        <span id="scoreLabel">0 / 100</span>
+      </div>
+      <div class="meter"><div id="meterFill"></div></div>
+
+      <div class="checks">
+        <div class="check" id="lengthCheck"><span class="check-icon">○</span><span>At least 12 characters</span></div>
+        <div class="check" id="upperCheck"><span class="check-icon">○</span><span>Uppercase letter (A–Z)</span></div>
+        <div class="check" id="lowerCheck"><span class="check-icon">○</span><span>Lowercase letter (a–z)</span></div>
+        <div class="check" id="numberCheck"><span class="check-icon">○</span><span>Number (0–9)</span></div>
+        <div class="check" id="symbolCheck"><span class="check-icon">○</span><span>Special character (!@#$...)</span></div>
+        <div class="check" id="uniqueCheck"><span class="check-icon">○</span><span>Avoid common patterns</span></div>
+      </div>
+
+      <div class="suggestion" id="suggestion">
+        <div class="suggestion-icon">✦</div>
+        <div><strong>Ready to improve?</strong><p>Your analysis and recommendations will appear here.</p></div>
+      </div>
+
+      <div class="generator">
+        <div><div class="eyebrow">PASSWORD GENERATOR</div><h3>Need a stronger password?</h3><p>Create a random password with a mix of characters.</p></div>
+        <button id="generateBtn" class="primary-btn" type="button">Generate password <span>↗</span></button>
+      </div>
+      <div class="generated hidden" id="generatedBox">
+        <code id="generatedPassword"></code>
+        <button id="copyBtn" class="secondary-btn" type="button">Copy</button>
+        <button id="useBtn" class="secondary-btn" type="button">Analyze</button>
+      </div>
+    </section>
+
+    <section class="tips">
+      <div class="tip-card"><span>01</span><h3>Go long</h3><p>Use 12–16 or more characters. Longer passphrases are usually harder to guess.</p></div>
+      <div class="tip-card"><span>02</span><h3>Stay unique</h3><p>Use a different password for every account. A password manager can help.</p></div>
+      <div class="tip-card"><span>03</span><h3>Think unpredictable</h3><p>Avoid names, birthdays, keyboard patterns and common phrases.</p></div>
+    </section>
+
+    <footer>Educational project · Passwords are analyzed locally and are not sent to a server.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
